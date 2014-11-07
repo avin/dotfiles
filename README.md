@@ -9,5 +9,4 @@ Just my daily dotfiles.
 Install
 
     git clone https://github.com/avin/dotfiles.git ~/dotfiles
-    chmod +x ~/dotfiles/install.sh
     ~/dotfiles/install.sh

@@ -42,6 +42,3 @@ for FILE in $DIR/*; do
     fi
 done
 
-## Install vim plugins
-
-vim +PluginInstall +qall
