@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 set nobackup
+set t_Co=256
 
 colorscheme lucius
 
