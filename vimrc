@@ -1,7 +1,7 @@
 set nocompatible              " be iMproved, required
 set nobackup
 
-source ~/.vim/lucius.vim
+colorscheme lucius
 
 filetype plugin indent on    " required
 
