@@ -278,11 +278,11 @@ alias top10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 #}
 
 ## Memory overview
-#memusage() {
-#    ps aux | awk '{if (NR > 1) print $5;
-#                   if (NR > 2) print "+"}
-#                   END { print "p" }' | dc
-#}
+memusage() {
+    ps aux | awk '{if (NR > 1) print $5;
+                   if (NR > 2) print "+"}
+                   END { print "p" }' | dc
+}
 
 ## print hex value of a number
 #hex() {
@@ -330,5 +330,9 @@ alias top10='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
 #showINC ()    { perl -e 'for (@INC) { printf "%d %s\n", $i++, $_ }' }
 #vimpm ()      { vim `perldoc -l $1 | sed -e 's/pod$/pm/'` }
 #vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
+
+wd() {
+    ~/dotfiles/wd.sh
+}
 
 ## END OF FILE #################################################################
