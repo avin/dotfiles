@@ -332,7 +332,7 @@ memusage() {
 #vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
 
 wd() {
-    ~/dotfiles/wd.sh
+    . ~/dotfiles/wd.sh
 }
 
 ## END OF FILE #################################################################
