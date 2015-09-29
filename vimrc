@@ -10,3 +10,8 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+set t_ku=[A 
+set t_kd=[B
+set t_kr=[C
+set t_kl=[D

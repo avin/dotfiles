@@ -334,6 +334,8 @@ memusage() {
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source ~/dotfiles/k/k.sh
+
 wd() {
     . ~/dotfiles/wd.sh
 }
