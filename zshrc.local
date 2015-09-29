@@ -331,6 +331,9 @@ memusage() {
 #vimpm ()      { vim `perldoc -l $1 | sed -e 's/pod$/pm/'` }
 #vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 wd() {
     . ~/dotfiles/wd.sh
 }
