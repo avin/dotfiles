@@ -353,7 +353,7 @@ alias la5routes='php artisan route:list'
 alias la5vendor='php artisan vendor:publish'
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh-syntax-highlighting.zsh
 
 source ~/dotfiles/k/k.sh
 
@@ -363,6 +363,9 @@ wd() {
 
 t(){
     . ./vendor/bin/phpunit
+}
+tp(){
+    . ../../../vendor/bin/phpunit
 }
 
 
