@@ -8,8 +8,7 @@
 ## VARIABLES
 
 DIR=~/dotfiles                    # dotfiles directory
-OLDDIR=~/dotfiles_old             # old dotfiles backup directory
-EXCLUDE_FILES=('README.md' 'install.sh' '.git' '.gitignore' '.gitmodules')    # list of files/folders do not symlink in homedir
+EXCLUDE_FILES=('README.md' 'install.sh' '.git' '.gitignore' '.gitmodules' 'preparations')    # list of files/folders do not symlink in homedir
 
 ##########
 ## FUNCTIONS
@@ -32,13 +31,14 @@ array_contains () {
 
 ## Make symlinks and backup old configs
 
-mkdir -p $OLDDIR
 for FILE in $DIR/*; do
     FILE=$(basename $FILE)
     if ! array_contains EXCLUDE_FILES $FILE; then
         echo ">> $FILE"
-        mv ~/.$FILE ~/dotfiles_old/ 2> /dev/null
         ln -s $DIR/$FILE ~/.$FILE
     fi
 done
 
+########
+## PREPARATIONS
+$DIR/preparations/ssh.sh
