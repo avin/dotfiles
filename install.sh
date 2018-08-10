@@ -41,4 +41,8 @@ done
 
 ########
 ## PREPARATIONS
-$DIR/preparations/ssh.sh
+array=( ssh nano )
+for item in "${array[@]}"
+do
+	$DIR/preparations/$item.sh
+done
