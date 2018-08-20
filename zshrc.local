@@ -368,6 +368,10 @@ tp(){
     . ../../../vendor/bin/phpunit
 }
 
-export PATH=$PATH:$HOME/bin:/usr/lib/go-1.10/bin:$HOME/go/bin
+mkdir ~/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$HOME/bin:/usr/lib/go-1.10/bin:$GOPATH/bin
 
 ## END OF FILE #################################################################
+alias crack-wifi="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kill -p 30 --wps-time 30 --wps-timeouts 5 --wpat 60"
+alias crack-wifi-safe="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kill --wps --wps-only --nodeauths -p 30 --wps-time 30 --wps-timeouts 5"
