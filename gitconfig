@@ -10,8 +10,8 @@
 # GIT_AUTHOR_NAME, GIT_COMMITTER_NAME, GIT_AUTHOR_EMAIL and
 # GIT_COMMITTER_EMAIL via your shell environment instead.
 [user]
-	name = Avin Grape
-	email = carcinogen75@gmail.com
+	name = avin
+	email = avin.github@gmail.com
 
 [format]
     numbered = auto
