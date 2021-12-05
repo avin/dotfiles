@@ -1,8 +1,12 @@
 cd ~/
 
 # NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+source "$HOME/dotfiles/zsh-nvm/zsh-nvm.plugin.zsh"
 
 # Zsh plugins
 source "$HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -13,3 +17,4 @@ alias crack-wifi="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kil
 alias crack-wifi-safe="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kill --wps --wps-only --nodeauths -p 30 --wps-time 30 --wps-timeouts 5"
 
 alias s="cat ./package.json | jq .scripts -C"
+alias udb='sudo updatedb --prunepaths="/tmp /var/spool /media /mnt"'
