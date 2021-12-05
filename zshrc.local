@@ -1,8 +1,14 @@
 cd ~/
 
+# NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Zsh plugins
 source "$HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/dotfiles/zsh-wd/wd.plugin.zsh"
 
+# Aliases
 alias crack-wifi="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kill -p 30 --wps-time 30 --wps-timeouts 5 --wpat 60"
 alias crack-wifi-safe="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kill --wps --wps-only --nodeauths -p 30 --wps-time 30 --wps-timeouts 5"
 
