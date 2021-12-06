@@ -1,5 +1,8 @@
 cd ~/
 
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/go/bin/
+
 # Zsh plugins
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
