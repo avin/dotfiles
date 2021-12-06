@@ -15,4 +15,5 @@ alias crack-wifi="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kil
 alias crack-wifi-safe="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kill --wps --wps-only --nodeauths -p 30 --wps-time 30 --wps-timeouts 5"
 
 alias s="cat ./package.json | jq .scripts -C"
+alias cat=ccat
 alias updatedb='sudo updatedb --prunepaths="/tmp /var/spool /media /mnt"'
