@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 mkdir ~/dotfiles/certs
 wget -O ~/dotfiles/certs/server.crt https://raw.githubusercontent.com/avin/certs/master/files/server.crt

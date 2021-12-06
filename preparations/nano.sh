@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/zsh
+
+if [[ "$OSTYPE" == "darwin"* ]] then exit 0; fi
 
 rm -rf ~/.nano
 git clone --depth=1 https://github.com/scopatz/nanorc.git ~/.nano

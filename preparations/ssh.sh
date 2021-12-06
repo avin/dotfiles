@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 echo "+++ Installing ssh keys +++"
 
