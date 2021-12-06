@@ -4,6 +4,9 @@ DIR=~/dotfiles
 
 wget -O ~/.zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
 
+##
+## INSTALL GO
+##
 install_golang() {
   local go_src target version latest_version
 
@@ -22,7 +25,11 @@ install_golang() {
 
 install_golang
 
+go install github.com/owenthereal/ccat@latest
+
+##
 ## PREPARATIONS
+##
 items=(
     'ssh'
     'nano'
@@ -34,7 +41,9 @@ for item in $items; do
   sh $DIR/preparations/$item.sh
 done
 
+##
 ## LN CONFIGS
+##
 items=(
     'zshrc.local'
     'zshrc.pre'

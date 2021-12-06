@@ -14,6 +14,9 @@ source "$HOME/dotfiles/zsh-wd/wd.plugin.zsh"
 alias crack-wifi="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kill -p 30 --wps-time 30 --wps-timeouts 5 --wpat 60"
 alias crack-wifi-safe="sudo python /opt/wifite2/Wifite.py -i wlan1 --showb -mac --kill --wps --wps-only --nodeauths -p 30 --wps-time 30 --wps-timeouts 5"
 
-alias s="cat ./package.json | jq .scripts -C"
 alias cat=ccat
+alias s="cat ./package.json | jq .scripts -C"
 alias updatedb='sudo updatedb --prunepaths="/tmp /var/spool /media /mnt"'
+alias https="http-server -S -c-1 --cert ~/dotfiles/certs/server.crt --key ~/dotfiles/certs/server.key --cors -p 5000"
+alias http="http-server -c-1 --cors -p 5000"
+alias _="cd ~/dev"
