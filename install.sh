@@ -27,6 +27,7 @@ items=(
     'ssh'
     'certs'
     'install-go'
+    'install-rust'
 )
 for item in $items; do
     zsh $DIR/preparations/$item.sh

@@ -119,6 +119,7 @@ source $ZSH/oh-my-zsh.sh
 alias au="sudo apt-get update"
 alias ag="sudo apt-get upgrade"
 alias agi="sudo apt-get install"
+alias acs="sudo apt-cache search"
 alias ll="ls -AlhF"
 alias tailf="tail -f"
 alias ff='find . -type f -name'

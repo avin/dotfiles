@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-if [[ "$OSTYPE" == "darwin"* ]]; then exit 0; fi
-
 install_golang() {
     local go_src target version latest_version
 
