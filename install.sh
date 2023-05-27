@@ -1,37 +1,34 @@
-#!/bin/zsh
+#/bin/sh
 
 DIR=~/dotfiles
 
-wget -O ~/.zshrc        https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
+## ---------------------
+## INSTALL DEPENDECIES
+## ---------------------
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-##
+# Install powerlevel10k theme
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+# Install plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+## ---------------------
 ## LN CONFIGS
-##
-items=(
-    'zshrc.local'
-    'zshrc.pre'
-    'gitconfig'
-)
-for item in $items; do
-  rm ~/.$item
-  ln -s $DIR/$item ~/.$item
-done
+## ---------------------
+ln -s $DIR/zshrc ~/.zshrc
+ln -s $DIR/gitconfig ~/.gitconfig
 
-##
-## PREPARATIONS
-##
+## ---------------------
+## EXEC PREPARATIONS
+## ---------------------
 items=(
     'ssh'
-    'nano'
-    'zsh-syntax-highlighting'
-    'zsh-wd'
-    'zsh-nvm'
     'certs'
-    'ru-locale'
     'install-go'
-    'git-extras'
-    'wsl'
 )
 for item in $items; do
-  zsh $DIR/preparations/$item.sh
+    zsh $DIR/preparations/$item.sh
 done
