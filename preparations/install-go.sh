@@ -21,5 +21,3 @@ install_golang() {
 }
 
 install_golang
-
-go install github.com/owenthereal/ccat@latest
