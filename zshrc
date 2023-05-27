@@ -67,7 +67,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -79,6 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    wd
     zsh-syntax-highlighting
     # zsh-autosuggestions
 )
@@ -118,4 +119,14 @@ source $ZSH/oh-my-zsh.sh
 alias au="sudo apt-get update"
 alias ag="sudo apt-get upgrade"
 alias agi="sudo apt-get install"
-alias ll="ls -alh"
+alias ll="ls -AlhF"
+alias tailf="tail -f"
+alias ff='find . -type f -name'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
