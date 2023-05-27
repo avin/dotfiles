@@ -122,6 +122,7 @@ alias agi="sudo apt-get install"
 alias ll="ls -AlhF"
 alias tailf="tail -f"
 alias ff='find . -type f -name'
+alias s='cat ./package.json | jq .scripts -C'
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -130,3 +131,8 @@ alias mv='mv -i'
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin/
