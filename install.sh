@@ -18,13 +18,6 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${Z
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 ## ---------------------
-## LN CONFIGS
-## ---------------------
-ln -s $DIR/fzf.zsh ~/.fzf.zsh
-ln -s $DIR/zshrc ~/.zshrc
-ln -s $DIR/gitconfig ~/.gitconfig
-
-## ---------------------
 ## EXEC PREPARATIONS
 ## ---------------------
 items=(
@@ -32,14 +25,28 @@ items=(
     'certs'
     'install-go'
     'install-rust'
+    'install-micro'
 )
 for item in $items; do
     zsh $DIR/preparations/$item.sh
 done
 
-
-# Install & compile rust-based utils
+## ---------------------
+# Install & compile RUST-based utils
+## ---------------------
 cargo install fd-find --locked
 cargo install bat --locked
 cargo install watchexec --locked
 cargo install exa --locked
+
+cargo install tealdeer --locked
+tldr --update
+
+## ---------------------
+## LN CONFIGS
+## ---------------------
+
+ln -sf $DIR/fzf.zsh ~/.fzf.zsh
+ln -sf $DIR/zshrc ~/.zshrc
+ln -sf $DIR/gitconfig ~/.gitconfig
+ln -sf $DIR/micro-settings.json ~/.config/micro/settings.json
