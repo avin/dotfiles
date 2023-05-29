@@ -115,12 +115,14 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Aliases
 alias au="sudo apt-get update"
 alias ag="sudo apt-get upgrade"
 alias agi="sudo apt-get install"
-alias acs="sudo apt-cache search"
-alias ll="ls -AlhF"
+alias acs="apt-cache --names-only search"
+alias ll="exa -AlhF"
 alias tailf="tail -f"
 alias ff='find . -type f -name'
 alias s='cat ./package.json | jq .scripts -C'
@@ -137,3 +139,5 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin/
+
+export BAT_CONFIG_PATH=$HOME/dotfiles/bat-config
