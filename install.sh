@@ -22,7 +22,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ## ---------------------
 items=(
     'ssh'
-    'certs'
     'install-go'
     'install-rust'
     'install-micro'
