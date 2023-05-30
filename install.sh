@@ -34,12 +34,11 @@ done
 ## ---------------------
 # Install & compile RUST-based utils
 ## ---------------------
-cargo install fd-find --locked
-cargo install bat --locked
-cargo install watchexec --locked
-cargo install exa --locked
+cargo install --locked bat
+cargo install --locked watchexec
+cargo install --locked exa
+cargo install --locked tealdeer
 
-cargo install tealdeer --locked
 tldr --update
 
 ## ---------------------
