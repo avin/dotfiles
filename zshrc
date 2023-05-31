@@ -139,9 +139,6 @@ alias ggg='git add . && echo "Enter commit message:" && read commit_message && g
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:$GOPATH/bin/
+source ~/dotfiles/go-env
 
 export BAT_CONFIG_PATH=$HOME/dotfiles/bat-config

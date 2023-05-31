@@ -14,6 +14,8 @@ then
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
+ZSH_CUSTOM=~/.oh-my-zsh/custom
+
 # Install powerlevel10k theme
 if [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ]
 then
@@ -38,15 +40,14 @@ fi
 items=(
     'ssh'
     'install-go'
+    'install-go-utils'
     'install-rust'
+    'install-rust-utils'
     'install-micro'
 )
 for item in $items; do
     zsh $DIR/preparations/$item.sh
 done
-
-
-
 
 ## ---------------------
 ## LN CONFIGS
