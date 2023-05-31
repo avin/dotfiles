@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source "$HOME/.cargo/env"
+
 ## ---------------------
 ## Install RUST-based utils
 ## ---------------------

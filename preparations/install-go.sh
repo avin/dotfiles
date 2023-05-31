@@ -19,7 +19,3 @@ install_golang() {
 }
 
 install_golang
-
-echo 1
-source ~/dotfiles/go-env
-echo 2

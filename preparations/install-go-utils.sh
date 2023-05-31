@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source ~/dotfiles/go-env
+
 ## ---------------------
 ## Install GO-based utils
 ## ---------------------
