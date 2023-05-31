@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+chsh -s /bin/zsh
+
 DIR=~/dotfiles
 
 ## ---------------------
@@ -43,26 +45,7 @@ for item in $items; do
     zsh $DIR/preparations/$item.sh
 done
 
-## ---------------------
-## Install RUST-based utils
-## ---------------------
-cargo install --locked bat
-cargo install --locked watchexec
-cargo install --locked exa
-cargo install --locked tealdeer
-cargo install --locked cargo-cache
-cargo install --locked zoxide
-cargo install --locked dua-cli
 
-tldr --update
-
-cargo cache -a
-
-## ---------------------
-## Install GO-based utils
-## ---------------------
-go install github.com/jesseduffield/lazydocker@latest
-go install github.com/jesseduffield/lazygit@latest
 
 
 ## ---------------------
