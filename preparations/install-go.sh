@@ -19,5 +19,3 @@ install_golang() {
 }
 
 install_golang
-
-source ~/.zshrc

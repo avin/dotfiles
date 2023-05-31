@@ -134,7 +134,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias gst='git status -s'
-
+alias ggg='git add . && echo "Введите сообщение коммита:" && read commit_message && git commit -m "$commit_message" && git push -f origin master'
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
