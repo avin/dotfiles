@@ -1,5 +1,13 @@
 # Dotfiles
 
+## Pre-install
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install git zsh build-essential
+```
+
 ## Install
 
 ```sh
