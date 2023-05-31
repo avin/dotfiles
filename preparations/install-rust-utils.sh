@@ -6,7 +6,7 @@ source "$HOME/.cargo/env"
 ## Install RUST-based utils
 ## ---------------------
 cargo install --locked bat
-cargo install --locked watchexec
+cargo install --locked watchexec-cli
 cargo install --locked exa
 cargo install --locked tealdeer
 cargo install --locked cargo-cache
