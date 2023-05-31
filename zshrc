@@ -117,6 +117,8 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+eval "$(zoxide init zsh)"
+
 # Aliases
 alias au="sudo apt-get update"
 alias ag="sudo apt-get upgrade"
@@ -130,6 +132,8 @@ alias s='cat ./package.json | jq .scripts -C'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+
+alias gst='git status -s'
 
 
 export VOLTA_HOME="$HOME/.volta"
