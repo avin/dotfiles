@@ -134,6 +134,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias gst='git status -s'
+alias gitlog='git log --graph --oneline --all --decorate'
 
 function ggg {
     echo "Enter commit message:"
