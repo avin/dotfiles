@@ -134,7 +134,15 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias gst='git status -s'
-alias ggg='git add . && echo "Enter commit message:" && read commit_message && git commit -m "$commit_message" && git push -f origin master'
+
+function ggg {
+    echo "Enter commit message:"
+    read commit_message
+    git add .
+    git commit -m "$commit_message"
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    git push -f origin "$current_branch"
+}
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
