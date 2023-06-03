@@ -34,6 +34,12 @@ then
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 fi
 
+# Install Tmux Plugin Manager
+if [ ! -d "~/.tmux/plugins/tpm" ]
+then
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 ## ---------------------
 ## EXEC PREPARATIONS
 ## ---------------------
@@ -56,4 +62,5 @@ done
 ln -sf $DIR/fzf.zsh ~/.fzf.zsh
 ln -sf $DIR/zshrc ~/.zshrc
 ln -sf $DIR/gitconfig ~/.gitconfig
-ln -sf $DIR/micro-settings.json ~/.config/micro/settings.json
+ln -sf $DIR/config/micro ~/.config/micro
+ln -sf $DIR/config/tmux ~/.config/tmux
