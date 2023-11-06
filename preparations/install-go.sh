@@ -9,7 +9,7 @@ install_golang() {
         sudo rm -rf "${go_src}"
     fi
 
-    latest_version="$(curl -sSL "https://golang.org/VERSION?m=text")"
+    latest_version="$(curl -sSL "https://golang.org/VERSION?m=text" | head -n 1)"
     set +u
     version="${GO_VESION:-${latest_version}}"
     set -u
