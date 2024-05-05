@@ -1,6 +1,6 @@
 [user]
-    name = a.vinogradov
-    email = a.vinogradov@bpcbt.com
+    name = Avin Lambrero
+    email = avin.github@gmail.com
 
 [format]
     numbered = auto
@@ -56,5 +56,5 @@
     who   = "!sh -c 'git log -1 --pretty=\"format:%an <%ae>\" --author=\"$1\"' -"
 [http]
 	postBuffer = 524288000
-[credential]
-	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe
+#[credential]
+#	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe

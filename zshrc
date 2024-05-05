@@ -79,7 +79,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    wd
     zsh-syntax-highlighting
     # zsh-autosuggestions
 )
@@ -124,7 +123,6 @@ alias au="sudo apt-get update"
 alias ag="sudo apt-get upgrade"
 alias agi="sudo apt-get install"
 alias acs="apt-cache --names-only search"
-alias ll="exa -alhF"
 alias tailf="tail -f"
 alias ff='find . -type f -name'
 alias s='cat ./package.json | jq .scripts -C'
@@ -136,6 +134,8 @@ alias mv='mv -i'
 alias gst='git status -s'
 alias gitlog='git log --graph --oneline --all --decorate'
 
+# alias ll="exa -alhF"
+
 function ggg {
     echo "Enter commit message:"
     read commit_message
@@ -144,6 +144,9 @@ function ggg {
     current_branch=$(git rev-parse --abbrev-ref HEAD)
     git push -f origin "$current_branch"
 }
+
+export VISUAL="micro"
+export EDITOR="$VISUAL"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"

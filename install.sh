@@ -46,10 +46,12 @@ fi
 items=(
     'ssh'
     'install-go'
-    'install-go-utils'
     'install-rust'
-    'install-rust-utils'
     'install-micro'
+
+    # 'install-go-utils'
+    # 'install-rust-utils'
+    # 'install-docker'
 )
 for item in $items; do
     zsh $DIR/preparations/$item.sh
