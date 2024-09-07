@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+set -e
+
 curl https://getmic.ro | bash
 sudo mv ./micro /usr/local/bin
 

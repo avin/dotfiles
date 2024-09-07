@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+set -e
+
 echo "+++ Installing ssh keys +++"
 
 mkdir ~/.ssh -p
