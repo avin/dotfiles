@@ -48,10 +48,10 @@ fi
 items=(
 	'ssh'
 	'install-micro'
-	'install-go'
-	'install-rust'
-	'install-go-utils'
-	'install-rust-utils'
+	# 'install-go'
+	# 'install-rust'
+	# 'install-go-utils'
+	# 'install-rust-utils'
 	# 'install-docker'
 )
 for item in "${items[@]}"; do
