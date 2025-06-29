@@ -1,6 +1,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 DISABLE_MAGIC_FUNCTIONS="true"
 HIST_STAMPS="yyyy-mm-dd"
+DISABLE_AUTO_UPDATE="true"
+DISABLE_UPDATE_PROMPT="true"
 
 plugins=(
     git
