@@ -14,11 +14,6 @@ source $ZSH/oh-my-zsh.sh
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-
 # Aliases
 
 ## Package management (apt)
@@ -53,10 +48,18 @@ function ggg {
     git push -f origin "$current_branch"
 }
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 export VISUAL="micro"
 export EDITOR="$VISUAL"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+
 source ~/dotfiles/go-env
+

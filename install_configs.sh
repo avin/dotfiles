@@ -11,6 +11,7 @@ rm -rf $HOME/.zshrc
 rm -rf $HOME/.gitconfig
 rm -rf $HOME/.config/micro
 rm -rf $HOME/.config/tmux
+rm -rf $HOME/.config/starship.toml
 
 # Ensure config directory exists
 mkdir -p $HOME/.config
@@ -21,3 +22,4 @@ ln -sf "$SCRIPT_DIR/zshrc"         "$HOME/.zshrc"
 ln -sf "$SCRIPT_DIR/gitconfig"     "$HOME/.gitconfig"
 ln -sf "$SCRIPT_DIR/config/micro"  "$HOME/.config/micro"
 ln -sf "$SCRIPT_DIR/config/tmux"   "$HOME/.config/tmux"
+ln -sf "$SCRIPT_DIR/config/starship.toml" "$HOME/.config/starship.toml"
