@@ -4,10 +4,7 @@ set -e
 
 # Install core packages including CLI dialog utility
 sudo apt-get update
-sudo apt-get install -y zsh nano git curl build-essential mc tmux whiptail
-
-# Change default shell to zsh
-chsh -s /bin/zsh
+sudo apt-get install -y zsh nano git curl build-essential mc tmux zoxide whiptail
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

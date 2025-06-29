@@ -2,6 +2,12 @@
 
 set -e
 
+# Change default shell to zsh
+chsh -s /bin/zsh
+
+# Install Starship prompt
+curl -sS https://starship.rs/install.sh | sh
+
 # Determine script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
