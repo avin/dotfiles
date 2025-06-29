@@ -4,7 +4,8 @@ set -e
 
 # Install core packages including CLI dialog utility
 sudo apt-get update
-sudo apt-get install -y zsh nano git curl build-essential mc tmux zoxide whiptail jq
+sudo apt-get install -y zsh nano git wget curl build-essential mc tmux zoxide whiptail jq apt-transport-https software-properties-common
+source /etc/os-release
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
