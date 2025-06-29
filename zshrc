@@ -20,21 +20,28 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 # Aliases
+
+## Package management (apt)
 alias au="sudo apt-get update"
 alias ag="sudo apt-get upgrade"
 alias agi="sudo apt-get install"
 alias acs="apt-cache --names-only search"
-alias tailf="tail -f"
-alias ff='find . -type f -name'
-alias s='cat ./package.json | jq .scripts -C'
 
+## File operations
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias tailf="tail -f"
+alias ff='find . -type f -name'
 
+## Git aliases
 alias gst='git status -s'
 alias gitlog='git log --graph --oneline --all --decorate'
 
+## Project scripts
+alias s='cat ./package.json | jq .scripts -C'
+
+## Miscellaneous
 # alias ll="exa -alhF"
 
 function ggg {
