@@ -12,7 +12,6 @@ cargo install --locked watchexec-cli
 cargo install --locked exa
 cargo install --locked tealdeer
 cargo install --locked cargo-cache
-cargo install --locked zoxide
 cargo install --locked dua-cli
 
 tldr --update
