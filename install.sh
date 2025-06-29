@@ -1,75 +1,24 @@
-#!/bin/zsh
+#!/bin/bash
 
 set -e
 
-sudo apt-get install zsh git curl build-essential mc screen
+# Install core packages including CLI dialog utility
+sudo apt-get update
+sudo apt-get install -y zsh nano git curl build-essential mc tmux whiptail
 
+# Change default shell to zsh
 chsh -s /bin/zsh
 
-DIR=$HOME/dotfiles
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## ---------------------
-## INSTALL DEPENDECIES
-## ---------------------
+# Determine script directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Install Oh My Zsh
-rm -rf $HOME/.oh-my-zsh
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-fi
+# Run environment setup
+"$SCRIPT_DIR/install_environment.sh"
 
-ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+# Run utilities installation
+"$SCRIPT_DIR/install_utilities.sh"
 
-# Install powerlevel10k theme
-if [ ! -d "$ZSH_CUSTOM/themes/powerlevel10k" ]; then
-	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-fi
-
-# Install oh-my-zsh plugins
-if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]; then
-	git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-fi
-
-# Install fzf
-rm -rf $HOME/.fzf
-if [ ! -d "$HOME/.fzf" ]; then
-	git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
-fi
-
-# Install Tmux Plugin Manager
-rm -rf $HOME/.tmux/plugins/tpm
-if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-	git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-fi
-
-## ---------------------
-## EXEC PREPARATIONS
-## ---------------------
-items=(
-	'ssh'
-	'install-micro'
-	# 'install-go'
-	# 'install-rust'
-	# 'install-go-utils'
-	# 'install-rust-utils'
-	# 'install-docker'
-)
-for item in "${items[@]}"; do
-	zsh $DIR/preparations/$item.sh
-done
-
-## ---------------------
-## LN CONFIGS
-## ---------------------
-
-rm -rf $HOME/.fzf.zsh
-rm -rf $HOME/.zshrc
-rm -rf $HOME/.gitconfig
-rm -rf $HOME/.config/micro
-rm -rf $HOME/.config/tmux
-
-ln -sf $DIR/fzf.zsh $HOME/.fzf.zsh
-ln -sf $DIR/zshrc $HOME/.zshrc
-ln -sf $DIR/gitconfig $HOME/.gitconfig
-ln -sf $DIR/config/micro $HOME/.config/micro
-ln -sf $DIR/config/tmux $HOME/.config/tmux
+# Run configuration linking
+"$SCRIPT_DIR/install_configs.sh"
