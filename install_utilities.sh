@@ -7,12 +7,12 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Prompt user to select components
 CHOICES=$(whiptail --title "Select components to install" --checklist \
-  "Choose components:" 15 60 6 \
+  "Choose components:" 15 60 6 \  
+  "install-rust"       "Rust" ON \
+  "install-go"         "Go" ON \
+  "install-go-utils"   "Go utilities" OFF \
+  "install-rust-utils" "Rust utilities" OFF \
   "install-docker"     "Docker" OFF \
-  "install-rust"       "Rust" OFF \
-  "install-go"         "Go" OFF \
-  "install-go-utils"   "Go utilities (lazygit, lazydocker)" OFF \
-  "install-rust-utils" "Rust utilities (bat, exa, etc.)" OFF \
   3>&1 1>&2 2>&3)
 
 # Remove quotation marks
