@@ -29,9 +29,11 @@ alias mv='mv -i'
 alias tailf="tail -f"
 alias ff='find . -type f -name'
 
+
 ## Git aliases
 alias gst='git status -s'
 alias gitlog='git log --graph --oneline --all --decorate'
+alias gg='lazygit'
 
 ## Project scripts
 alias s='cat ./package.json | jq .scripts -C'
