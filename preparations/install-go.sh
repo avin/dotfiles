@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 set -e
 
@@ -13,7 +13,7 @@ install_golang() {
 
   latest_version="$(curl -sSL "https://golang.org/VERSION?m=text" | head -n 1)"
   set +u
-  version="${GO_VESION:-${latest_version}}"
+  version="${GO_VERSION:-${latest_version}}"
   set -u
   target="https://dl.google.com/go/${version}.linux-amd64.tar.gz"
 
