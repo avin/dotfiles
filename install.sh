@@ -2,7 +2,7 @@
 
 set -e
 
-sudo apt-get install git curl build-essential mc screen
+sudo apt-get install zsh git curl build-essential mc screen
 
 chsh -s /bin/zsh
 
