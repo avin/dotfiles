@@ -55,6 +55,16 @@ function ggg {
 export VISUAL="micro"
 export EDITOR="$VISUAL"
 
+if [[ -n "$WSL_DISTRO_NAME" ]] || [[ -f /proc/version && $(grep -i microsoft /proc/version) ]]; then
+    export WINDOWS_HOST=$(ip route show | grep -i default | awk '{ print $3}')
+    export HTTP_PROXY="http://${WINDOWS_HOST}:7890"
+    export HTTPS_PROXY="http://${WINDOWS_HOST}:7890"
+    export NO_PROXY="localhost,127.0.0.1,.local"
+    export http_proxy="$HTTP_PROXY"
+    export https_proxy="$HTTPS_PROXY"
+    export no_proxy="$NO_PROXY"
+fi
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
