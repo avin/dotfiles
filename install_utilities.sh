@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -18,12 +18,12 @@ install-docker     "Docker"               OFF \
 CHOICES=${CHOICES//\"/}
 
 # split into array on whitespace
-items=(${=CHOICES})
+read -a items <<< "$CHOICES"
 
 for item in "${items[@]}"; do
   script="$SCRIPT_DIR/preparations/$item.sh"
   if [ -f "$script" ]; then
-    zsh "$script"
+    bash "$script"
   else
     echo "Warning: $script not found" >&2
   fi
