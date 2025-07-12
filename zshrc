@@ -47,7 +47,7 @@ function ggg {
     git add .
     git commit -m "$commit_message"
     current_branch=$(git rev-parse --abbrev-ref HEAD)
-    git push -f origin "$current_branch"
+    git push origin "$current_branch"
 }
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
