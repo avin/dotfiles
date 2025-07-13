@@ -1,0 +1,19 @@
+[tools]
+# Languages
+node = "lts"
+python = "latest"
+go = "latest"
+rust = "latest"
+
+# Utilities
+bat = "latest"
+eza = "latest"
+dua = "latest"
+watchexec = "latest"
+lazygit = "latest"
+lazydocker = "latest"
+btop = "latest"
+ripgrep = "latest"
+fd = "latest"
+delta = "latest"
+dust = "latest"

@@ -31,8 +31,23 @@
 [svn]
     rmdir = true
 
-#[http]
-#    sslVerify=false
+[core]
+    pager = delta
+    editor = micro
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
 
 [alias]
     b     = branch
@@ -54,7 +69,25 @@
     tagme = !sh -c '[ -z "$1" ] && exit 1 || git tag -s v\"$1\" -m \"release \"$1\"\"' sh
     tush  = push --tags
     who   = "!sh -c 'git log -1 --pretty=\"format:%an <%ae>\" --author=\"$1\"' -"
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = !gitk
+
 [http]
-	postBuffer = 524288000
+    postBuffer = 524288000
+
+[pull]
+    rebase = true
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[init]
+    defaultBranch = main
+
+#[http]
+#    sslVerify=false
+
 #[credential]
-#	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe
+#	   helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe

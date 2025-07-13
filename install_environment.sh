@@ -6,7 +6,7 @@ set -e
 chsh -s /bin/zsh
 
 # Install Starship prompt
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- --yes
 
 # Determine script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

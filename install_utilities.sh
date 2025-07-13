@@ -4,13 +4,10 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 CHOICES=$(whiptail --title "Select components to install" --checklist \
-"Choose components:" 15 60 8 \
+"Choose components:" 15 60 4 \
 ssh                "Install SSH keys"     ON \
 install-micro      "Micro editor"         ON \
-install-rust       "Rust"                 OFF \
-install-go         "Go"                   OFF \
-install-go-utils   "Go utilities"         OFF \
-install-rust-utils "Rust utilities"      OFF \
+install-mise       "Mise (language manager)" ON \
 install-docker     "Docker"               OFF \
 3>&1 1>&2 2>&3)
 

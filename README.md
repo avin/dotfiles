@@ -15,21 +15,3 @@ git clone https://github.com/avin/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./install.sh
 ```
-
-## Install only environment
-
-```sh
-./install_environment.sh
-```
-
-## Install only utilities
-
-```sh
-./install_utilities.sh
-```
-
-## Install only configurations
-
-```sh
-./install_configs.sh
-```
