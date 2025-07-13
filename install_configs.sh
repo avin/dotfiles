@@ -11,9 +11,11 @@ rm -rf $HOME/.zshrc
 rm -rf $HOME/.gitconfig
 rm -rf $HOME/.mise.toml
 rm -rf $HOME/.config/micro
+rm -rf $HOME/.config/bat
 rm -rf $HOME/.config/tmux
 rm -rf $HOME/.config/starship.toml
 rm -rf $HOME/.config/powershell
+rm -rf $HOME/.config/mise
 
 
 # Ensure config directory exists
@@ -23,9 +25,9 @@ mkdir -p $HOME/.config
 ln -sf "$SCRIPT_DIR/fzf.zsh"       "$HOME/.fzf.zsh"
 ln -sf "$SCRIPT_DIR/zshrc"         "$HOME/.zshrc"
 ln -sf "$SCRIPT_DIR/gitconfig"     "$HOME/.gitconfig"
-ln -sf "$SCRIPT_DIR/mise.toml"	   "$HOME/.mise.toml"
 ln -sf "$SCRIPT_DIR/config/micro"  "$HOME/.config/micro"
 ln -sf "$SCRIPT_DIR/config/bat"    "$HOME/.config/bat"
 ln -sf "$SCRIPT_DIR/config/tmux"   "$HOME/.config/tmux"
 ln -sf "$SCRIPT_DIR/config/powershell"   "$HOME/.config/powershell"
 ln -sf "$SCRIPT_DIR/config/starship.toml" "$HOME/.config/starship.toml"
+ln -sf "$SCRIPT_DIR/config/mise"   "$HOME/.config/mise"

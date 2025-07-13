@@ -155,6 +155,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias reload='source ~/.zshrc'
 alias zshconfig='${EDITOR} ~/.zshrc'
 alias hosts='sudo ${EDITOR} /etc/hosts'
+alias e='${EDITOR}'
 
 # Show public IP
 alias myip='curl -s ifconfig.me'

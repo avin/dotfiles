@@ -1,3 +1,7 @@
+[settings]
+experimental = true
+pin = true
+
 [tools]
 # Languages
 node = "lts"
