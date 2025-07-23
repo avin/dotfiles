@@ -4,7 +4,7 @@ set -e
 # Install core packages including CLI dialog utility
 sudo apt-get update
 sudo apt-get install -y zsh nano git wget curl build-essential mc tmux zoxide whiptail jq \
-     apt-transport-https software-properties-common locales tldr
+     apt-transport-https software-properties-common locales tldr fzf
 
 mkdir -p ~/.local/share/tldr
 tldr --update

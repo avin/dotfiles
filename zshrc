@@ -105,10 +105,6 @@ if command -v bat >/dev/null 2>&1; then
     alias cat='bat'
 fi
 
-if command -v fd >/dev/null 2>&1; then
-    alias find='fd'
-fi
-
 if command -v rg >/dev/null 2>&1; then
     alias grep='rg'
 fi
@@ -117,13 +113,7 @@ if command -v dua >/dev/null 2>&1; then
     alias du='dua'
 fi
 
-if command -v procs >/dev/null 2>&1; then
-    alias ps='procs'
-fi
 
-if command -v dust >/dev/null 2>&1; then
-    alias df='dust'
-fi
 
 ## Git aliases
 alias gst='git status -s'
