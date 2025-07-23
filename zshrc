@@ -46,6 +46,9 @@ export LANGUAGE=en_US.UTF-8
 export VISUAL="micro"
 export EDITOR="$VISUAL"
 
+export LESS='-R -i -w -M -z-4'
+export LESSHISTFILE=-
+
 # FZF configuration
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 if command -v fd >/dev/null 2>&1; then
@@ -90,7 +93,6 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias tailf="tail -f"
-alias ff='find . -type f -name'
 
 ## Modern replacements
 if command -v eza >/dev/null 2>&1; then
@@ -100,20 +102,6 @@ if command -v eza >/dev/null 2>&1; then
     alias l='eza -F'
     alias tree='eza --tree'
 fi
-
-if command -v bat >/dev/null 2>&1; then
-    alias cat='bat'
-fi
-
-if command -v rg >/dev/null 2>&1; then
-    alias grep='rg'
-fi
-
-if command -v dua >/dev/null 2>&1; then
-    alias du='dua'
-fi
-
-
 
 ## Git aliases
 alias gst='git status -s'
@@ -154,6 +142,18 @@ alias localip='hostname -I | awk "{print \$1}"'
 
 # Functions
 
+ff() { find . -type f -name "*$1*" 2>/dev/null; }
+fd() { find . -type d -name "*$1*" 2>/dev/null; }
+f() {
+    find . -name "*$1*" 2>/dev/null | while read item; do
+        if [ -d "$item" ]; then
+            echo -e "\033[34m[DIR]\033[0m $item"
+        else
+            echo -e "\033[32m[FILE]\033[0m $item"
+        fi
+    done
+}
+
 # Super fast git add+commit+push
 function ggg {
     echo "Enter commit message:"
@@ -172,6 +172,26 @@ function mkcd {
 # Backup file with timestamp
 function backup {
     cp "$1"{,.backup-$(date +%Y%m%d-%H%M%S)}
+}
+
+# Enhanced function for history search
+hgrep() {
+    if [ -n "$1" ]; then
+        history | grep -i "$1"
+    else
+        echo "Usage: hgrep <search_term>"
+    fi
+}
+
+# Function for quick notes
+note() {
+    local note_file="$HOME/.notes"
+    if [ $# -eq 0 ]; then
+        [ -f "$note_file" ] && cat "$note_file" || echo "No notes yet"
+    else
+        echo "$(date '+%Y-%m-%d %H:%M:%S'): $*" >> "$note_file"
+        echo "Note added"
+    fi
 }
 
 # Expand alias on Ctrl+Space
