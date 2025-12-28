@@ -54,6 +54,9 @@ if command -v fd >/dev/null 2>&1; then
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Aliases
@@ -214,8 +217,13 @@ fi
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # WSL specific settings
-if [[ -n "$WSL_DISTRO_NAME" ]] || [[ -f /proc/version && $(grep -i microsoft /proc/version) ]]; then
-    export WINDOWS_HOST=$(ip route show | grep -i default | awk '{ print $3}')
+if [[ -n "$WSL_DISTRO_NAME" ]] || [[ -f /proc/version && $(grep -i microsoft /proc/version) ]]; then    
+    if grep -q "WSL2" /proc/version; then        
+        export WINDOWS_HOST=$(ip route show | grep -i default | awk '{ print $3}')
+    else        
+        export WINDOWS_HOST=127.0.0.1
+    fi
+        
     export HTTP_PROXY="http://${WINDOWS_HOST}:7890"
     export HTTPS_PROXY="http://${WINDOWS_HOST}:7890"
     export NO_PROXY="localhost,127.0.0.1,.local"
