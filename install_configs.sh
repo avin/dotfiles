@@ -9,13 +9,11 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 rm -rf $HOME/.fzf.zsh
 rm -rf $HOME/.zshrc
 rm -rf $HOME/.gitconfig
-rm -rf $HOME/.mise.toml
 rm -rf $HOME/.config/micro
 rm -rf $HOME/.config/bat
 rm -rf $HOME/.config/tmux
 rm -rf $HOME/.config/starship.toml
 rm -rf $HOME/.config/powershell
-rm -rf $HOME/.config/mise
 
 
 # Ensure config directory exists
@@ -30,4 +28,3 @@ ln -sf "$SCRIPT_DIR/config/bat"    "$HOME/.config/bat"
 ln -sf "$SCRIPT_DIR/config/tmux"   "$HOME/.config/tmux"
 ln -sf "$SCRIPT_DIR/config/powershell"   "$HOME/.config/powershell"
 ln -sf "$SCRIPT_DIR/config/starship.toml" "$HOME/.config/starship.toml"
-ln -sf "$SCRIPT_DIR/config/mise"   "$HOME/.config/mise"

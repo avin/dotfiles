@@ -7,7 +7,6 @@ CHOICES=$(whiptail --title "Select components to install" --checklist \
 "Choose components:" 15 60 4 \
 ssh                "Install SSH keys"     ON \
 install-micro      "Micro editor"         ON \
-install-mise       "Mise (language manager)" ON \
 install-docker     "Docker"               OFF \
 3>&1 1>&2 2>&3)
 
