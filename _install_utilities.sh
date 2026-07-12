@@ -17,7 +17,7 @@ CHOICES=${CHOICES//\"/}
 read -a items <<< "$CHOICES"
 
 for item in "${items[@]}"; do
-  script="$SCRIPT_DIR/preparations/$item.sh"
+  script="$SCRIPT_DIR/preparations/_$item.sh"
   if [ -f "$script" ]; then
     bash "$script"
   else
