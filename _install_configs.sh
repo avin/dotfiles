@@ -7,6 +7,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Remove old symlinks and config files
 rm -rf $HOME/.fzf.zsh
+rm -rf $HOME/.carapace.zsh
 rm -rf $HOME/.zshrc
 rm -rf $HOME/.gitconfig
 rm -rf $HOME/.config/micro
@@ -21,6 +22,7 @@ mkdir -p $HOME/.config
 
 # Link configuration files
 ln -sf "$SCRIPT_DIR/fzf.zsh"       "$HOME/.fzf.zsh"
+ln -sf "$SCRIPT_DIR/carapace.zsh"  "$HOME/.carapace.zsh"
 ln -sf "$SCRIPT_DIR/zshrc"         "$HOME/.zshrc"
 ln -sf "$SCRIPT_DIR/gitconfig"     "$HOME/.gitconfig"
 ln -sf "$SCRIPT_DIR/config/micro"  "$HOME/.config/micro"

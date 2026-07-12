@@ -18,6 +18,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.carapace.zsh ] && source ~/.carapace.zsh
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
