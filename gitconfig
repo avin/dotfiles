@@ -33,7 +33,7 @@
 
 [core]
     pager = delta
-    editor = micro
+    editor = nano
 
 [interactive]
     diffFilter = delta --color-only

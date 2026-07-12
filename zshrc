@@ -42,7 +42,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-export VISUAL="micro"
+export VISUAL="nano"
 export EDITOR="$VISUAL"
 
 export LESS='-R -i -w -M -z-4'
@@ -50,10 +50,6 @@ export LESSHISTFILE=-
 
 # FZF configuration
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-if command -v fd >/dev/null 2>&1; then
-    export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-fi
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -96,19 +92,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias tailf="tail -f"
 
-## Modern replacements
-if command -v eza >/dev/null 2>&1; then
-    alias ls='eza'
-    alias ll='eza -alhF'
-    alias la='eza -a'
-    alias l='eza -F'
-    alias tree='eza --tree'
-fi
-
 ## Git aliases
 alias gst='git status -s'
 alias gitlog='git log --graph --oneline --all --decorate'
-alias gg='lazygit'
 alias gp='git pull'
 alias gpu='git push'
 alias gd='git diff'
@@ -127,7 +113,6 @@ alias ports='sudo ss -tulpn'
 alias mem='free -h'
 alias cpu='lscpu'
 alias disk='df -h'
-alias top='btop || htop || top'
 
 ## Miscellaneous
 alias s='cat ./package.json | jq .scripts -C'
@@ -145,7 +130,6 @@ alias localip='hostname -I | awk "{print \$1}"'
 # Functions
 
 ff() { find . -type f -name "*$1*" 2>/dev/null; }
-fd() { find . -type d -name "*$1*" 2>/dev/null; }
 f() {
     find . -name "*$1*" 2>/dev/null | while read item; do
         if [ -d "$item" ]; then

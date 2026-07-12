@@ -23,11 +23,6 @@ if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" ]; then
     git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting"
 fi
 
-# Install fzf
-if [ ! -d "$HOME/.fzf" ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf"
-fi
-
 # Install Tmux Plugin Manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
