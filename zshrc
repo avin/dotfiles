@@ -87,6 +87,7 @@ if command -v apt-file >/dev/null 2>&1; then
 fi
 
 ## File operations
+alias ll='ls -alFh --group-directories-first --color=auto'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
